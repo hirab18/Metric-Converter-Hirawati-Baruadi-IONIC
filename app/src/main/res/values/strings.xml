@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metric Converter</string>
+    <string name="prompt_select_metric">Pilih Metrik</string>
+    <string name="prompt_select_unit">--Pilih Satuan</string>
+</resources>

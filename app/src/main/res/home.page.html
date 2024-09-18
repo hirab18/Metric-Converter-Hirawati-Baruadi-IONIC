@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Metric Converter</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <h3>By: Hirawati Baruadi</h3>
+
+    <p>Dari:</p>
+    <ion-item>
+        <ion-label>Pilih Metrik</ion-label>
+        <ion-select [(ngModel)]="selectedMetric" (ionChange)="onMetricChange()">
+            <ion-select-option value="length">Panjang</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>--Pilih Satuan</ion-label>
+        <ion-select [(ngModel)]="fromUnit">
+            <ion-select-option *ngFor="let unit of availableUnits" [value]="unit">{{ unit }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <p>Ke:</p>
+    <ion-item>
+        <ion-label>--Pilih Satuan</ion-label>
+        <ion-select [(ngModel)]="toUnit">
+            <ion-select-option *ngFor="let unit of availableUnits" [value]="unit">{{ unit }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Masukkan Nilai</ion-label>
+        <ion-input type="number" [(ngModel)]="inputValue"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="convert()">Konversi</ion-button>
+
+    <ion-item *ngIf="result !== null">
+        <ion-label>Hasil Konversi: {{ result }}</ion-label>
+    </ion-item>
+</ion-content>
